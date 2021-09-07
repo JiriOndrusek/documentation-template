@@ -27,25 +27,11 @@ You can customize the final README.adoc by providing several child pages (only 1
  
  Version alignment is executed even if `src/main/doc` does not exist.
  
- # How to use
- 
-Prepare all required adoc files (required location is `src/main/doc`)
- 
-You can run maven plugin by following command:
-> mvn io.fabric8.quickstarts:documentation-template:VERSION:updateDoc
-
-
-See usage in existing quickstarts (e.g. https://github.com/fabric8-quickstarts/spring-boot-camel-rest-sql)
-
  # How to generate README.adoc in a quickstart
  
- Use profile `generate` to generate README.adoc file for specific project. Example of use:
+ Execute this plugin to generate README.adoc file for specific quickstart. Example of execution (from root folder of quickstart):
  
- > mvn package -Dquickstart.name=spring-boot-camel -Pgenerate 
-
-Parameter `quickstart.path` contains path to specific project.
-Parameter `quickstart.name` contains the neme for the specific project.
-(Documentation project parent directory has to be the same as the parent of quickstart directory)
+ > mvn io.fabric8.quickstarts:documentation-template:<version>:updateDoc
 
 
 

@@ -8,22 +8,22 @@ IMPORTANT: This quickstart can run in 2 modes: standalone on your machine and on
 
 You can run this quickstart in the following modes:
 
-* Kubernetese / Single-node OpenShift cluster
+* Kubernetes / Single-node OpenShift cluster
 * Standalone on your machine
 
 The most effective way to run this quickstart is to deploy and run the project on OpenShift.
 
 For more details about running this quickstart on a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:http://appdev.openshift.io/docs/spring-boot-runtime.html[Spring Boot Runtime Guide].
 
-== Running the Quickstart on a single-node Kubernetese/OpenShift cluster
+== Running the Quickstart on a single-node Kubernetes/OpenShift cluster
 
 IMPORTANT: You need to run this example on Container Development Kit 3.3 or OpenShift 3.7.
 Both of these products have suitable Fuse images pre-installed.
 If you run it in an environment where those images are not preinstalled follow the steps described in <<single-node-without-preinstalled-images>>.
 
-A single-node Kubernetese/OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
+A single-node Kubernetes/OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
 
-If you have a single-node Kubernetese/OpenShift cluster, such as Minishift or the Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can deploy your quickstart there.
+If you have a single-node Kubernetes/OpenShift cluster, such as Minishift or the Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can deploy your quickstart there.
 
 . Log in to your OpenShift cluster:
 +
@@ -71,11 +71,11 @@ Wait until you can see that the pod for the `[=project.artifactId]` has started 
 [/#if]
 
 [[#lt]#single-node-without-preinstalled-images]
-=== Running the Quickstart on a single-node Kubernetese/OpenShift cluster without preinstalled images
+=== Running the Quickstart on a single-node Kubernetes/OpenShift cluster without preinstalled images
 
-A single-node Kubernetese/OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
+A single-node Kubernetes/OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
 
-If you have a single-node Kubernetese/OpenShift cluster, such as Minishift or the Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can deploy your quickstart there.
+If you have a single-node Kubernetes/OpenShift cluster, such as Minishift or the Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can deploy your quickstart there.
 
 
 . Log in to your OpenShift cluster:
@@ -136,15 +136,15 @@ Wait until you can see that the pod for the `[=project.artifactId]` has started 
 [#if integrationTesting??][=integrationTesting][#else]
 == Integration Testing
 
-The example includes a https://github.com/fabric8io/fabric8/tree/master/components/fabric8-arquillian[fabric8 arquillian] Kubernetese Integration Test.
-Once the container image has been built and deployed in Kubernetese, the integration test can be run with:
+The example includes a https://github.com/fabric8io/fabric8/tree/master/components/fabric8-arquillian[fabric8 arquillian] Kubernetes Integration Test.
+Once the container image has been built and deployed in Kubernetes, the integration test can be run with:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 mvn test -Dtest=*KT
 ----
 
-The test is disabled by default and has to be enabled using `-Dtest`. https://fabric8.io/guide/testing.html[Integration Testing] and https://fabric8.io/guide/arquillian.html[Fabric8 Arquillian Extension] provide more information on writing full fledged black box integration tests for Kubernetese.
+The test is disabled by default and has to be enabled using `-Dtest`. https://fabric8.io/guide/testing.html[Integration Testing] and https://fabric8.io/guide/arquillian.html[Fabric8 Arquillian Extension] provide more information on writing full fledged black box integration tests for Kubernetes.
 [/#if]
 
 == Running the quickstart standalone on your machine

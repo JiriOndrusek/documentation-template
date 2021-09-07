@@ -1,18 +1,18 @@
 [=introduction]
 
-IMPORTANT: This quickstart can run in 1 mode: on Kubernetese / OpenShift Cluster
+IMPORTANT: This quickstart can run in 1 mode: on Kubernetes / OpenShift Cluster
 
 [#if introductionOther??][=introductionOther][/#if]
 
-== Running the Quickstart on a single-node Kubernetese/OpenShift cluster
+== Running the Quickstart on a single-node Kubernetes/OpenShift cluster
 
 IMPORTANT: You need to run this example on Container Development Kit 3.3 or OpenShift 3.7.
 Both of these products have suitable Fuse images pre-installed.
 If you run it in an environment where those images are not preinstalled follow the steps described in <<single-node-without-preinstalled-images>>.
 
-A single-node Kubernetese/OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
+A single-node Kubernetes/OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
 
-If you have a single-node Kubernetese/OpenShift cluster, such as Minishift or the Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can deploy your quickstart there.
+If you have a single-node Kubernetes/OpenShift cluster, such as Minishift or the Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can deploy your quickstart there.
 
 . Log in to your OpenShift cluster:
 +
@@ -60,11 +60,11 @@ Wait until you can see that the pod for the `[=project.artifactId]` has started 
 [/#if]
 
 [[#lt]#single-node-without-preinstalled-images]
-=== Running the Quickstart on a single-node Kubernetese/OpenShift cluster without preinstalled images
+=== Running the Quickstart on a single-node Kubernetes/OpenShift cluster without preinstalled images
 
-A single-node Kubernetese/OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
+A single-node Kubernetes/OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
 
-If you have a single-node Kubernetese/OpenShift cluster, such as Minishift or the Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can deploy your quickstart there.
+If you have a single-node Kubernetes/OpenShift cluster, such as Minishift or the Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can deploy your quickstart there.
 
 
 . Log in to your OpenShift cluster:

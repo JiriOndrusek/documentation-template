@@ -150,6 +150,9 @@ public class UpdateDocMojo  extends AbstractMojo {
 
     private String alignVersions(String text) throws IOException {
         String pomVersion = project.getProperties().getProperty("fuse.bom.version");
+        if(pomVersion == null) {
+            pomVersion = project.getProperties().getProperty("fuse.version");
+        }
 
         Pattern pattern = Pattern.compile("(\\d+)\\.(\\d+)\\..*");
         Matcher matcher = pattern.matcher(pomVersion);
@@ -160,7 +163,7 @@ public class UpdateDocMojo  extends AbstractMojo {
             int secondVersion = Integer.parseInt(matcher.group(2));
 
             //version 7.x has tag of image 1:x
-            String imageName = project.getName().toLowerCase().contains("karaf") ? FUSE_KARAF_OPENSHIFT_IMAGE_NAME : FUSE_JAVA_OPENSHIFT_IMAGE_NAME;
+            String imageName = project.getArtifactId().toLowerCase().contains("karaf") ? FUSE_KARAF_OPENSHIFT_IMAGE_NAME : FUSE_JAVA_OPENSHIFT_IMAGE_NAME;
             String fuseImage =  imageName + ":" + (firstVersion - 6) + "." + secondVersion;
             String fuseImageRepository = REGISTRY_REDHAT_IO_FUSE + firstVersion + '/' + fuseImage;
 
@@ -174,7 +177,8 @@ public class UpdateDocMojo  extends AbstractMojo {
             {
                 sb.append(line.replaceAll("oc import-image .*", "oc import-image " + fuseImage + " --from=" + fuseImageRepository + " --confirm")
                     .replaceAll("red_hat_fuse/\\d+.\\d+/html", "red_hat_fuse/" + firstVersion + '.' + secondVersion + "/html")
-                    .replaceAll("-Dfabric8.generator.from=MY_PROJECT_NAME/.*","-Dfabric8.generator.from=MY_PROJECT_NAME/" + fuseImage))
+                    .replaceAll("-Dfabric8.generator.from=MY_PROJECT_NAME/.*","-Dfabric8.generator.from=MY_PROJECT_NAME/" + fuseImage)
+                    .replaceAll(imageName + ":\\d+.\\d+", fuseImage))
                 .append(System.getProperty("line.separator"));
             }
 
